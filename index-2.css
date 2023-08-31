@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700;800&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'JetBrains Mono', monospace;
+
+    background-color: #d600ff;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 100%;
+    height: 300px;
+
+    background-color: #d600ff;
+}
+
+header img {
+    padding-top: 50px;
+    max-height: 100%;
+}
+
+.post {
+    max-width: 600px;
+}
+
+.image {
+    height: 400px;
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.description {
+    background-color: #d600ff;
+    color: white;
+    padding: 25px;
+    margin-top: -5px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+
+    background-color: #d600ff;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 75px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+
+    padding: 25px 0;
+    
+    width: 100%;
+
+    background-image: url("res/bg.png");
+    background-color: #d600ff;
+    background-position: center;
+    background-size: cover;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+
+    background-color: #d600ff;
+    color: white;
+
+    width: 100%;
+    height: 75px;
+}
+
+a, a:active, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    main {
+        height: 100%;
+    }    
+}
+  

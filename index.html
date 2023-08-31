@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d600ff">
+    <title>Terio</title>
+    <link rel="stylesheet" href="index-3.css">
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <img src="res/logo.png">
+            <div id="menu">
+                <a href="#gallery">gallery</a>
+                <a href="#prices">price sheet</a>
+                <a href="#contact">contact</a>
+
+            </div>
+            <footer>
+                <a href="#">music</a>
+                <a href="#">mastodon</a>
+                <a href="#">instagram</a>
+            </footer>
+        </header>
+
+        <!-- for index and index-2 -->
+        <!-- <div id="menu">
+            <a href="#">gallery</a>
+            <a href="#">price sheet</a>
+            <a href="#">contact</a>
+        </div> -->
+        
+        <main>
+            <article id="gallery" class="active">
+                <div class="post">
+                    <div class="image"><img src="res/gallery/silverr.PNG"></div>
+                    <div class="description">
+                        <div class="title">silverr</div>
+                        <div class="text">Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>.</div>
+                        <div class="gradient"></div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="image"><img src="res/gallery/meadow.png"></div>
+                    <div class="description">
+                        <div class="title">title</div>
+                        <div class="text">text text text...</div>
+                        <div class="gradient"></div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="image"><img src="res/gallery/pp.jpg"></div>
+                    <div class="description">
+                        <div class="title">title</div>
+                        <div class="text">text text text...</div>
+                        <div class="gradient"></div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="image"><img src="res/gallery/immortal.png"></div>
+                    <div class="description">
+                        <div class="title">title</div>
+                        <div class="text">text text text...</div>
+                        <div class="gradient"></div>
+                    </div>
+                </div>
+            </article>
+            <article id="prices">
+                <b>PRICE SHEET</b>
+            </article>
+            <article id="contact">
+                <b>CONTACT</b>
+            </article>
+        </main>
+
+        <!-- for index and index-2 -->
+        <!-- <footer>
+            <a href="#">music</a>
+            <a href="#">mastodon</a>
+            <a href="#">instagram</a>
+        </footer> -->
+
+        <div id="mobile-footer">
+            <a href="#">music</a>
+            <a href="#">mastodon</a>
+            <a href="#">instagram</a>
+        </div>
+        
+        <div id="preview">
+            <div id="preview-post"></div>
+            <div id="preview-close" onclick="hidePostPreview()">X</div>
+        </div>
+    </div>
+    <!-- Post preview -->
+    <script defer>
+        // EXPORTS
+        let hidePostPreview = () => {}
+
+        // CODE
+        (() => {
+            let el_preview = document.getElementById('preview')
+            let el_preview_post = document.getElementById('preview-post');
+            let el_main = document.getElementsByTagName('main');
+            document.querySelectorAll('.post').forEach(post => {
+                post.addEventListener('click', () => { showPostPreview(post) });
+            });
+
+            function showPostPreview(post) {
+                let new_post = post.cloneNode(true);
+                el_preview_post.replaceChildren(...new_post.children);
+                el_preview.classList.add('active');
+            }
+
+            hidePostPreview = function() {
+                el_preview.classList.remove('active');
+            }
+        })()
+    </script>
+    <!-- Subpages -->
+    <script defer>
+        // CODE
+        (() => {
+            let el_main = document.getElementsByTagName('main')[0];
+            let el_articles = document.querySelectorAll('article');
+            let article_ids = [...el_articles].map((el) => el.id);
+            console.log(article_ids)
+            page = function(id) {
+                if (article_ids.includes(id)) {
+                    el_articles.forEach((el) => {
+                        el.classList.toggle('active', el.id == id);
+                    })
+                }
+            }
+
+            window.addEventListener('hashchange', (e) => {
+                let url = e.newURL.split("/").pop();
+                if (!url.startsWith('#')) {
+                    return;
+                }
+
+                let subpage = url.substring(1);
+                page(subpage);
+            })
+
+            window.addEventListener('load', () => {
+                let url = document.URL.split("/").pop();
+                if (!url.startsWith('#')) {
+                    return;
+                }
+
+                let subpage = url.substring(1);
+                page(subpage);
+            })
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700;800&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background-image: url("res/bg.png");
+    background-color: #d600ff;
+    background-size: cover;
+    background-position: center;
+}
+
+#wrap {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: scroll;
+
+    width: 600px;
+    height: calc(100% - 100px);
+
+    background-color: #d600ff;
+    border: 5px solid #d600ff;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+
+    width: 100%;
+
+    background-color: #d600ff;
+}
+
+header img {
+    padding: 25px 25px 0 25px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.image {
+    height: 400px;
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.description {
+    background-color: #d600ff;
+    color: white;
+    padding: 25px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+
+    background-color: #d600ff;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 60px;
+    padding: 25px 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 25px;
+
+    background-color: #d600ff;
+    color: white;
+
+    width: 100%;
+    height: 60px;
+    padding: 25px 0;
+}
+
+a, a:active, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    #wrap {
+        height: 100%;
+    }    
+}
+  
