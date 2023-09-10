@@ -76,16 +76,16 @@ article {
 #prices, #contact {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
 }
 
 .sheet {
     color: white;
     background-color: #d600ff;
-    width: 600px;
+    width: 700px;
     max-width: calc(100% - 100px);
-    height: calc(100% - 100px);
+    max-height: calc(100% - 100px);
     padding: 25px;
     margin-top: 25px;
 }
@@ -305,6 +305,10 @@ a:hover {
     .post:hover img {
         filter: invert(0%);
     }
+
+    .sheet {
+        width: 400px;
+    }
 }
 
 @media (max-width: 775px) {
@@ -363,5 +367,15 @@ a:hover {
 
     .post:hover img {
         filter: invert(0%);
+    }
+
+    #prices, #contact {
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .sheet {
+        width: calc(100% - 100px);
+        max-height: calc(100% - 100px);
     }
 }
