@@ -117,7 +117,7 @@ article {
 }
 
 .post:hover img {
-    filter: hue-rotate(90deg);
+    filter: invert(100%);
 }
 
 .image {
@@ -303,7 +303,7 @@ a:hover {
     }
 
     .post:hover img {
-        filter: hue-rotate(0deg);
+        filter: invert(0%);
     }
 }
 
@@ -362,6 +362,6 @@ a:hover {
     }
 
     .post:hover img {
-        filter: hue-rotate(0deg);
+        filter: invert(0%);
     }
 }
