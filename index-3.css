@@ -378,4 +378,8 @@ a:hover {
         width: calc(100% - 100px);
         max-height: calc(100% - 100px);
     }
+
+    #preview-post .image {
+        max-width: 100%;
+    }
 }
