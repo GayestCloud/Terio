@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700;800&display=swap');
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -9,6 +10,26 @@ html, body {
     font-family: 'JetBrains Mono', monospace;
 
     background-color: #d600ff;
+}
+
+::-moz-selection {
+    color: #d600ff;
+    background: white;
+}
+
+::selection {
+    color: #d600ff;
+    background: white;
+}
+
+#preview-close {
+    font-size: 26px;
+    color: white;
+    font-weight: 900;
+}
+
+#preview-close {
+    cursor: pointer;
 }
 
 #wrap {
@@ -38,7 +59,7 @@ header img {
 }
 
 main {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 }
 
@@ -49,6 +70,38 @@ article {
     background-color: #d600ff;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+}
+
+#prices, #contact {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.sheet {
+    color: white;
+    background-color: #d600ff;
+    width: 600px;
+    max-width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.sheet img {
+    max-width: 100%;
+}
+
+.t {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.subt {
+    margin-top: 25px;
+    font-weight: bold;
 }
 
 #gallery:not(.active),
@@ -57,7 +110,14 @@ article {
     display: none;
 }
 
-.post {
+.post {}
+
+.post:hover {
+    cursor: pointer;
+}
+
+.post:hover img {
+    filter: hue-rotate(90deg);
 }
 
 .image {
@@ -67,7 +127,7 @@ article {
 
 .image img {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     object-fit: cover;
 }
 
@@ -94,8 +154,8 @@ article {
     height: 20px;
     width: 100%;
 
-    background: rgb(214,0,255);
-    background: linear-gradient(0deg, rgba(214,0,255,1) 0%, rgba(214,0,255,0) 100%); 
+    background: rgb(214, 0, 255);
+    background: linear-gradient(0deg, rgba(214, 0, 255, 1) 0%, rgba(214, 0, 255, 0) 100%);
 }
 
 #menu {
@@ -118,13 +178,14 @@ article {
 #gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, 400px);
     grid-column-gap: 25px;
     grid-row-gap: 25px;
 
     height: calc(100% - 50px);
 
     padding: 25px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 footer {
@@ -141,7 +202,9 @@ footer {
     width: 100%;
 }
 
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
     color: white;
     text-decoration: none;
 }
@@ -195,7 +258,7 @@ a:hover {
     max-height: 50%;
 }
 
-#preview-post .image > img {
+#preview-post .image>img {
     object-fit: contain;
 }
 
@@ -213,9 +276,10 @@ a:hover {
 
 #preview-close {
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 40px;
 }
+
 /* END PREVIEW */
 
 @media (min-width: 775px) and (max-width: 1100px) {
@@ -236,6 +300,10 @@ a:hover {
         padding: 25px;
         text-align: justify;
         margin-top: -5px;
+    }
+
+    .post:hover img {
+        filter: hue-rotate(0deg);
     }
 }
 
@@ -293,4 +361,7 @@ a:hover {
         width: 100%;
     }
 
+    .post:hover img {
+        filter: hue-rotate(0deg);
+    }
 }

@@ -19,9 +19,9 @@
 
             </div>
             <footer>
-                <a href="#">music</a>
-                <a href="#">mastodon</a>
-                <a href="#">instagram</a>
+                <a href="https://terra.gayest.cloud/" target=”_blank”>music</a>
+                <a href="https://catcatnya.com/@terio" target=”_blank”>mastodon</a>
+                <a href="https://www.instagram.com/teriotats/" target=”_blank”>instagram</a>
             </footer>
         </header>
 
@@ -35,7 +35,7 @@
         <main>
             <article id="gallery" class="active">
                 <div class="post">
-                    <div class="image"><img src="res/gallery/silverr.PNG"></div>
+                    <div class="image"><img src="res/gallery/silverr.png"></div>
                     <div class="description">
                         <div class="title">silverr</div>
                         <div class="text">Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>. Created as an album cover for <b><a href="#">silverr</a></b>.</div>
@@ -68,10 +68,36 @@
                 </div>
             </article>
             <article id="prices">
-                <b>PRICE SHEET</b>
+                <div class="sheet">
+                    <div class="t">PRICE SHEET</div>
+
+                    <div class="subt">sketch</div>
+                    <p>head</p>
+                    <p>bust</p>
+                    <p>half-body</p>
+                    <p>full-body</p>
+                    <div class="d">sketch...</div>
+
+                    <div class="subt">line-art</div>
+                    <p>head</p>
+                    <p>bust</p>
+                    <p>half-body</p>
+                    <p>full-body</p>
+                    <div class="d">line-art...</div>
+
+                    <div class="subt">info</div>
+                    <p>info...</p>
+                </div>
             </article>
             <article id="contact">
-                <b>CONTACT</b>
+                <div class="sheet">
+                    <div class="t">CONTACT</div>
+
+                    <p>she/her 🏳️‍⚧️ - tattoo artist & professional hypochondriac</p>
+                    <p>terio.hachula@protonmail.com</p>
+
+                    <img src="res/pfp.jpg">
+                </div>
             </article>
         </main>
 
@@ -83,9 +109,9 @@
         </footer> -->
 
         <div id="mobile-footer">
-            <a href="#">music</a>
-            <a href="#">mastodon</a>
-            <a href="#">instagram</a>
+            <a href="https://terra.gayest.cloud/" target=”_blank”>music</a>
+            <a href="https://catcatnya.com/@terio" target=”_blank”>mastodon</a>
+            <a href="https://www.instagram.com/teriotats/" target=”_blank”>instagram</a>
         </div>
         
         <div id="preview">
@@ -127,6 +153,7 @@
             let article_ids = [...el_articles].map((el) => el.id);
             console.log(article_ids)
             page = function(id) {
+                console.log(id)
                 if (article_ids.includes(id)) {
                     el_articles.forEach((el) => {
                         el.classList.toggle('active', el.id == id);
@@ -135,6 +162,7 @@
             }
 
             window.addEventListener('hashchange', (e) => {
+                console.log("kurwahdbwa")
                 let url = e.newURL.split("/").pop();
                 if (!url.startsWith('#')) {
                     return;
@@ -145,8 +173,11 @@
             })
 
             window.addEventListener('load', () => {
+                console.log("AAAAAAAAAAAA")
+
                 let url = document.URL.split("/").pop();
                 if (!url.startsWith('#')) {
+                    console.log(url)
                     return;
                 }
 
