@@ -123,12 +123,23 @@ article {
 .image {
     height: 300px;
     width: 100%;
+    overflow: hidden;
 }
 
 .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.image.mia img {
+    object-position: center top;
+}
+
+.text {
+    font-size: 14px;
+    max-width: 800px;
+    text-align: center;
 }
 
 .description {
@@ -139,6 +150,12 @@ article {
     background-color: #d600ff;
     color: white;
     height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .title {
@@ -255,7 +272,7 @@ a:hover {
 #preview-post .image {
     max-width: 80%;
     height: auto;
-    max-height: 50%;
+    max-height: 75%;
 }
 
 #preview-post .image>img {
